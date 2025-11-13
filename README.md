@@ -35,7 +35,7 @@ spec:
   persistent: true
 ```
 
-1. Enable RabbitMQ to store messages persistently:
+2. Enable RabbitMQ to store messages persistently:
     - Mount a persistent volume at /var/lib/rabbitmq.
     - volumeClaimTemplates block to create per-pod PVCs
     - Hint: RabbitMQ stores its data in /var/lib/rabbitmq. Use PersistentVolumeClaim templates similar to MongoDB’s.
@@ -44,7 +44,7 @@ In order to ensure that the RabbitMQ pods persist data across pod restarts or de
 
 To summarize, when a RabbitMQ pod writes data to our defined `volumeMount` path `/var/lib/rabbitmq`, it actually writes to its PVC we define in `volumeClaimTemplates`. Each PVC persists across pod restarts/failures and reattaches to the pod so RabbitMQ sees its preserved data.
 
-1. Investigate what Azure managed services could replace self-hosted MongoDB and RabbitMQ.
+3. Investigate what Azure managed services could replace self-hosted MongoDB and RabbitMQ.
     - Give its name and purpose.
     - Explain why it’s a good fit (e.g., scaling, backups, availability).
 
