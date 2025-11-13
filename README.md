@@ -47,7 +47,7 @@ To summarize, when a RabbitMQ pod writes data to our defined `volumeMount` path 
 1. Investigate what Azure managed services could replace self-hosted MongoDB and RabbitMQ.
     - Give its name and purpose.
     - Explain why it’s a good fit (e.g., scaling, backups, availability).
-    - 
+
 Azure Cosmos DB and Azure Service Bus are the managed backing service that could replace MongoDB and RabbitMQ respectively.
 
 Azure Cosmos DB is a fully managed NoSQL database with extremely low response times, high scalability potential, and guaranteed 99.999% availability, security, and business continuity (SLA-backed) at any scale. In addition, Cosmos DB decreases administrative overhead with automatic management, updates, and patching. Finally, elastic autoscaling and serverless options enable the database to match capacity to demand. ([ref](https://learn.microsoft.com/en-us/azure/cosmos-db/introduction))
