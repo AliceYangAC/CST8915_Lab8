@@ -2,6 +2,8 @@
 
 ## Demo Video
 
+[Youtube Link](https://youtu.be/Ygp63DKZPuY)
+
 ## Reflection Questions: Improving and Extending the Deployment
 
 1. Make MongoDB capable of high availability (replication) and persistent storage:
@@ -17,6 +19,10 @@ Within our K8s manifest, this is accomplished by having more than one pod replic
 
 One thing to note is that at the moment, the configuration above does not seem to make a true replica set for MongoDB; while the PVCs protect against data loss on pod restart/deletion, they do not yet replicate or synchronize data between the MongoDB pods. From some quick research, we could enable the replica set by adding an `initContainer` ([ref](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/)) to the StatefulSet that runs the command `rs.initiate()` ([ref](https://www.mongodb.com/docs/manual/reference/method/rs.initiate/)) when the first pod is ready but before the service containers start running & storing data. Alternatively, we could use the Custom Resource Definitions (CRDs) provided by MongoDeb Kubernetes Operator so we can use the object `MongoDB` and create a replica set in our manifest that way.
 ([ref](https://www.mongodb.com/docs/kubernetes/current/tutorial/deploy-replica-set/))
+
+I chose to add an i
+
+`kubectl apply -f https://raw.githubusercontent.com/mongodb/mongodb-kubernetes-operator/master/deploy/all-in-one.yaml`
 
 ```yaml
 apiVersion: mongodb.com/v1
