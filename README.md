@@ -4,7 +4,11 @@
 
 [Youtube Link](https://youtu.be/Ygp63DKZPuY)
 
-## Reflection Questions: Improving and Extending the Deployment
+## **Task 1:** Build, Push, and Deploy Your Own Docker Images
+
+I combined both tasks in one YAML file in the repo, and commented which task it relates to. You can use the Find tool to look for `Task 1` and `Task 2` respectively.
+
+## **Task 2**: Improving and Extending the Deployment
 
 1. Make MongoDB capable of high availability (replication) and persistent storage:
    - PersistentVolumeClaim (PVC)
